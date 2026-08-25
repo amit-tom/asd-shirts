@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Commission Your Shirt — ASD</title>
+<meta name="description" content="Configure your ASD shirt: collar, cuff, placket and measurements, cut from ultra-rare Suvin cotton." />
+<link rel="stylesheet" href="../css/theme.css" />
+<link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="subpage">
+
+  <header class="site-header">
+    <a class="wordmark" href="../index.html">ASD</a>
+    <nav class="main-nav">
+      <a href="suvin.html">Suvin Cotton</a>
+      <a href="../index.html#lookbook-full">Look Book</a>
+      <a href="faq.html">FAQ</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">&#9788;</button>
+      <a class="btn btn-outline" href="../index.html#lookbook-full">Back to Look Book</a>
+    </div>
+  </header>
+
+  <section class="page-hero" style="padding-bottom:0;border-bottom:none;">
+    <div class="container">
+      <span class="eyebrow">Section 6 — Product Configuration</span>
+      <h1>Commission your shirt.</h1>
+      <p class="lede" id="look-note">Start from a curated look, or configure entirely from scratch — every path ends on the same 120/2 Suvin cloth.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:2.5rem;">
+    <div class="container">
+      <div class="config-layout">
+
+        <div>
+          <div class="config-preview">
+            [ live shirt preview — renders once product photography / 3D config is wired in ]
+          </div>
+          <p class="mono-note" style="margin-top:1rem;">This is a UI scaffold. Wire it to your sizing tool, pricing engine and cart/checkout flow next.</p>
+        </div>
+
+        <div>
+          <div class="option-group">
+            <h4>Collar</h4>
+            <div class="swatch-row">
+              <button aria-pressed="true">Semi-Spread</button>
+              <button aria-pressed="false">Classic Point</button>
+              <button aria-pressed="false">Medium Spread</button>
+              <button aria-pressed="false">Mandarin / Band</button>
+              <button aria-pressed="false">Cutaway</button>
+              <button aria-pressed="false">Wing</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <h4>Cuff</h4>
+            <div class="swatch-row">
+              <button aria-pressed="true">French, Solid Links</button>
+              <button aria-pressed="false">Dual-Button Barrel</button>
+              <button aria-pressed="false">Mitered Single-Button</button>
+              <button aria-pressed="false">Double-Turn French</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <h4>Placket</h4>
+            <div class="swatch-row">
+              <button aria-pressed="true">Standard</button>
+              <button aria-pressed="false">Concealed</button>
+              <button aria-pressed="false">Hidden Stud</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <h4>Fit</h4>
+            <div class="swatch-row">
+              <button aria-pressed="true">Tailored</button>
+              <button aria-pressed="false">Slim</button>
+              <button aria-pressed="false">Relaxed</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <h4>Measurements</h4>
+            <div class="field">
+              <label for="msizing">How would you like to size?</label>
+              <select id="msizing">
+                <option>Guided measurement tool</option>
+                <option>Send my best-fitting shirt's dimensions</option>
+                <option>Request a master tailor consultation call</option>
+              </select>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" href="checkout.html" style="width:100%;">Continue to Checkout</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="wordmark" style="color:#fff;margin-bottom:1rem;">ASD</div>
+          <p>One fibre. One shirt. Ultra-rare Indian Suvin cotton, made to your standard — QuiteYou.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="suvin.html">The Suvin Standard</a></li>
+            <li><a href="../index.html#lookbook-full">Look Book</a></li>
+            <li><a href="product.html">Commission a Shirt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Account</h5>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Support</h5>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="mailto:hello@asd.com">hello@asd.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 ASD. All rights reserved.</span>
+        <span class="mono-note">Suvin cotton &middot; 120/2 &middot; QuiteYou</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+  <script>
+    (function () {
+      var looks = {
+        boardroom: 'The Boardroom — Semi-Spread collar, French cuffs with solid links.',
+        courtroom: 'The Courtroom / Arbitrator — Classic Point collar, dual-button barrel cuffs.',
+        blazer: 'The Bespoke Blazer — floating Medium Spread collar, mitered single-button cuffs.',
+        statesman: 'The Statesman — Mandarin / Band collar, concealed placket.',
+        keynote: 'The Private Keynote — relaxed Cutaway collar, rolled sleeves.',
+        blacktie: 'The Black Tie Event — Wing collar, hidden stud placket, double-turn French cuffs.',
+      };
+      var params = new URLSearchParams(window.location.search);
+      var look = params.get('look');
+      var note = document.getElementById('look-note');
+      if (look && looks[look] && note) {
+        note.textContent = 'Starting from ' + looks[look] + ' Adjust anything below to make it yours.';
+      }
+    })();
+  </script>
+</body>
+</html>
