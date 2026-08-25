@@ -79,9 +79,10 @@ p { margin: 0 0 1em; line-height: 1.6; color: var(--foreground); }
 .site-header.is-solid .theme-toggle { border-color: var(--border); color: var(--foreground); }
 .nav-toggle { display: none; }
 
-/* subpages (no cinematic hero behind the header) run the header solid from the start */
+/* subpages (no cinematic hero behind the header) run the header solid from the start,
+   staying fixed at top like the homepage header (inherits position:fixed from .site-header) */
 body.subpage .site-header {
-  position: static; background: var(--card); color: var(--foreground); box-shadow: 0 1px 0 var(--border);
+  background: var(--card); color: var(--foreground); box-shadow: 0 1px 0 var(--border);
 }
 body.subpage .site-header .wordmark { color: var(--foreground); }
 body.subpage .site-header .main-nav a { color: var(--muted-foreground); }
