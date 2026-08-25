@@ -106,7 +106,9 @@ p { margin: 0 0 1em; line-height: 1.6; color: var(--foreground); }
 :root, .sw-root {
   --sw-bg: hsl(210, 10%, 4%);
   --sw-ink: hsl(0, 0%, 98%);
-  --sw-ink-soft: hsl(210, 10%, 72%);
+  /* was a muted grey — the scene counter, hero body copy, and scroll hint all read it
+     and were hard to read over video; matched to --sw-ink so hero text is white throughout */
+  --sw-ink-soft: hsl(0, 0%, 98%);
   --sw-accent: hsl(356, 84%, 48%);
   --sw-font-display: var(--font-serif);
   --sw-font-body: var(--font-sans);
