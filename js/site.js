@@ -46,7 +46,8 @@
           label: 'The Shirt',
           still: 'assets/shirt.webp',
           stillMobile: 'assets/shirt-m.webp',
-          // no clip yet — poster only until the dive_shirt render lands
+          clip: 'assets/vid/shirt.mp4',
+          clipMobile: 'assets/vid/shirt-m.mp4',
           accent: '#E0122A',
           scroll: 1.7,
           linger: 0.4,
@@ -58,7 +59,10 @@
         {
           id: 'cotton',
           label: 'Suvin Cotton',
-          still: 'assets/cotton.webp', // placeholder — no footage delivered yet
+          still: 'assets/cotton.webp',
+          stillMobile: 'assets/cotton-m.webp',
+          clip: 'assets/vid/cotton.mp4',
+          clipMobile: 'assets/vid/cotton-m.mp4',
           accent: '#E0122A',
           scroll: 1.5,
           eyebrow: '1 in 38 Tons',
@@ -70,10 +74,8 @@
           id: 'weave',
           label: 'The Weave',
           still: 'assets/weave.webp',
+          stillMobile: 'assets/weave-m.webp',
           clip: 'assets/vid/weave.mp4',
-          // clipMobile is a lighter re-encode of the same landscape clip, not a
-          // native 9:16 render (the delivered "-m" source wasn't portrait) — see
-          // work/ASSET-BRIEF.md.
           clipMobile: 'assets/vid/weave-m.mp4',
           accent: '#E0122A',
           scroll: 1.5,
@@ -100,7 +102,10 @@
         {
           id: 'lookbook',
           label: 'The Look Book',
-          still: 'assets/lookbook.webp', // placeholder — no footage delivered yet
+          still: 'assets/lookbook.webp',
+          stillMobile: 'assets/lookbook-m.webp',
+          clip: 'assets/vid/lookbook.mp4',
+          clipMobile: 'assets/vid/lookbook-m.mp4',
           accent: '#E0122A',
           scroll: 1.4,
           eyebrow: 'Your Setting',
@@ -111,7 +116,10 @@
         {
           id: 'finale',
           label: 'Commission',
-          still: 'assets/finale.webp', // placeholder — no footage delivered yet
+          still: 'assets/finale.webp',
+          stillMobile: 'assets/finale-m.webp',
+          clip: 'assets/vid/finale.mp4',
+          clipMobile: 'assets/vid/finale-m.mp4',
           accent: '#E0122A',
           scroll: 1.8,
           linger: 0.5,
