@@ -127,6 +127,16 @@ p { margin: 0 0 1em; line-height: 1.6; color: var(--foreground); }
    Give it the brand red instead, matching every other primary button on the site. */
 #world .sw-btn--primary { background: var(--sw-accent); color: #fff; }
 #world .sw-btn--ghost { color: var(--sw-ink); }
+/* Hero release past the last scene — see the releaseHero() comment in site.js. Without
+   this, .sw-sky/.sw-stage/.sw-copylayer (all position:fixed, inset:0) permanently
+   overlap every section below the hero once you scroll past it, on any screen size. */
+#world.is-past .sw-sky,
+#world.is-past .sw-stage,
+#world.is-past .sw-copylayer,
+#world.is-past .sw-hint,
+#world.is-past .sw-topbar {
+  visibility: hidden;
+}
 
 /* ---------------------------------------------------------------- section shells */
 .section { padding: 6.5rem 0; }

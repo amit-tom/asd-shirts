@@ -128,5 +128,19 @@
       connectors: [],
       connectorsMobile: [],
     });
+
+    // The engine's sky/stage/copylayer are position:fixed + inset:0 with no
+    // built-in "past the last scene" release — they stay pinned over whatever
+    // scrolls in underneath once you pass the hero's own track height (visible
+    // as the hero permanently overlapping the sections below it, on any screen
+    // size). #world's own rendered height IS the track length, so hide the
+    // fixed layers once scrolled past it, and restore them on the way back up.
+    var releaseHero = function () {
+      var pastHero = window.scrollY >= world.offsetHeight - 2;
+      world.classList.toggle('is-past', pastHero);
+    };
+    document.addEventListener('scroll', releaseHero, { passive: true });
+    window.addEventListener('resize', releaseHero);
+    releaseHero();
   }
 })();
