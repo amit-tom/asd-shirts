@@ -50,44 +50,28 @@ p { margin: 0 0 1em; line-height: 1.6; color: var(--foreground); }
 .btn-ghost { background: transparent; color: var(--sw-ink, #fff); border-color: color-mix(in srgb, currentColor 35%, transparent); }
 
 /* ---------------------------------------------------------------- header */
+/* Fixed and white on every page, homepage cinematic hero included — no
+   transparent/scroll-triggered state. */
 .site-header {
   position: fixed; inset: 0 0 auto 0; z-index: 500;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.15rem clamp(1.25rem, 4vw, 3rem);
-  color: #fff;
-  mix-blend-mode: normal;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent);
-  pointer-events: none;
+  background: var(--card); color: var(--foreground);
+  box-shadow: 0 1px 0 var(--border);
 }
-.site-header.is-solid { background: var(--card); color: var(--foreground); box-shadow: 0 1px 0 var(--border); }
-.site-header.is-solid .wordmark { color: var(--foreground); }
-.site-header.is-solid .main-nav a { color: var(--muted-foreground); }
-.site-header.is-solid .main-nav a:hover { color: var(--foreground); }
-.site-header * { pointer-events: auto; }
 .wordmark {
   font-family: var(--font-serif); font-size: 1.35rem; letter-spacing: 0.14em;
-  color: #fff;
+  color: var(--foreground);
 }
 .main-nav { display: flex; align-items: center; gap: 1.9rem; }
-.main-nav a { font-size: 0.86rem; color: rgba(255,255,255,0.82); transition: color .2s ease; }
-.main-nav a:hover { color: #fff; }
+.main-nav a { font-size: 0.86rem; color: var(--muted-foreground); transition: color .2s ease; }
+.main-nav a:hover { color: var(--foreground); }
 .header-actions { display: flex; align-items: center; gap: 0.9rem; }
 .theme-toggle {
-  width: 2.1rem; height: 2.1rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.35);
-  background: transparent; color: #fff; cursor: pointer; display: grid; place-items: center; font-size: 0.9rem;
+  width: 2.1rem; height: 2.1rem; border-radius: 999px; border: 1px solid var(--border);
+  background: transparent; color: var(--foreground); cursor: pointer; display: grid; place-items: center; font-size: 0.9rem;
 }
-.site-header.is-solid .theme-toggle { border-color: var(--border); color: var(--foreground); }
 .nav-toggle { display: none; }
-
-/* subpages (no cinematic hero behind the header) run the header solid from the start,
-   staying fixed at top like the homepage header (inherits position:fixed from .site-header) */
-body.subpage .site-header {
-  background: var(--card); color: var(--foreground); box-shadow: 0 1px 0 var(--border);
-}
-body.subpage .site-header .wordmark { color: var(--foreground); }
-body.subpage .site-header .main-nav a { color: var(--muted-foreground); }
-body.subpage .site-header .main-nav a:hover { color: var(--foreground); }
-body.subpage .site-header .theme-toggle { border-color: var(--border); color: var(--foreground); }
 
 @media (max-width: 860px) {
   .main-nav { display: none; }

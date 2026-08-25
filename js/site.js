@@ -11,16 +11,6 @@
     localStorage.setItem('asd-theme', root.classList.contains('dark') ? 'dark' : 'light');
   });
 
-  // ---- header: solid once you scroll off the cinematic hero --------------
-  var header = document.querySelector('.site-header');
-  if (header) {
-    var onScroll = function () {
-      header.classList.toggle('is-solid', window.scrollY > window.innerHeight * 0.6);
-    };
-    document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
   // ---- mobile nav (simple slide-down) -------------------------------------
   var navToggle = document.querySelector('.nav-toggle');
   var mainNav = document.querySelector('.main-nav');
