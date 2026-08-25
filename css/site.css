@@ -114,8 +114,19 @@ p { margin: 0 0 1em; line-height: 1.6; color: var(--foreground); }
   --sw-font-body: var(--font-sans);
 }
 #world { background: var(--sw-bg); }
+/* The base `p { color: var(--foreground) }` rule below is unlayered, so per the CSS
+   cascade-layers spec it beats the engine's @layer sw color-mix rule for .sw-copy__body
+   (also a <p>) regardless of specificity — the hero's body copy was rendering near-black
+   (--foreground) instead of white. This is more specific, so it wins back correctly. */
+#world .sw-copy__body { color: var(--sw-ink); }
 /* right-side scene dot nav — off by request; unlayered rule beats the engine's @layer sw default */
 #world .sw-route { display: none; }
+/* The engine's primary CTA button uses --sw-ink as its own BACKGROUND (its default ink
+   is a dark colour, so that reads as a solid dark pill). We repurposed --sw-ink as white
+   hero text, which turns that same button into white text on a white pill — invisible.
+   Give it the brand red instead, matching every other primary button on the site. */
+#world .sw-btn--primary { background: var(--sw-accent); color: #fff; }
+#world .sw-btn--ghost { color: var(--sw-ink); }
 
 /* ---------------------------------------------------------------- section shells */
 .section { padding: 6.5rem 0; }
