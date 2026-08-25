@@ -120,6 +120,8 @@ body.subpage .site-header .theme-toggle { border-color: var(--border); color: va
   --sw-font-body: var(--font-sans);
 }
 #world { background: var(--sw-bg); }
+/* right-side scene dot nav — off by request; unlayered rule beats the engine's @layer sw default */
+#world .sw-route { display: none; }
 
 /* ---------------------------------------------------------------- section shells */
 .section { padding: 6.5rem 0; }

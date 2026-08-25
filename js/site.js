@@ -36,7 +36,7 @@
     mountLetsScroll(world, {
       brand: { name: 'ASD', href: '#top' },
       hint: 'scroll to begin',
-      nav: true,
+      nav: false,
       atmosphere: true,
       diveScroll: 1.5,
       crossfade: 0.08,
